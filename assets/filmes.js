@@ -1,5 +1,5 @@
 export async function getFilmes() {
-    const url = 'http://localhost:8080/v2/acme/filmes'
+    const url = 'http://localhost:8080/v2/acmefilmes/filmes'
 
     const response = await fetch(url)
     const filmes = await response.json()
@@ -10,7 +10,7 @@ export async function getFilmes() {
 export async function getFilme(id) {
     const idFilme = id
 
-    const url = `http://localhost:8080/v2/acme/filme/${idFilme}`
+    const url = `http://localhost:8080/v2/acmefilmes/filme/${idFilme}`
 
     const response = await fetch(url)
     const filme = await response.json()
