@@ -1,0 +1,27 @@
+* {
+    font-family: 'Pattaya', sans-serif;
+    font-weight: 400;
+    font-size: x-large;
+    color: white;
+}
+
+.custom-toggler .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(255, 255, 255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+.custom-navbar {
+    height: 4rem;
+}
+
+.logo-acme {
+    width: 5.25rem;
+}
+
+main {
+    height: 92.2vh;
+    background-color: black;
+    background-image: url('../img/bcg.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: repeat-x;
+}
