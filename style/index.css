@@ -62,3 +62,8 @@ body {
 ::-webkit-scrollbar-track {
     background-color: black;
 }
+
+.navv {
+    padding-left: 4.5rem;
+    padding-right: 4rem;
+}
