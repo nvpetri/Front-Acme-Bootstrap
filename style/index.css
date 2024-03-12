@@ -17,11 +17,48 @@
     width: 5.25rem;
 }
 
-main {
+body {
     height: 92.2vh;
     background-color: black;
     background-image: url('../img/bcg.svg');
     background-size: cover;
     background-position: center;
-    background-repeat: repeat-x;
+    background-repeat: repeat;
+}
+
+.divName {
+    width: 10rem;
+    height: 3rem;
+    background-color: gray;
+    border-radius: 10px;
+    z-index: -1;
+    margin-top: -15px;
+    margin-left: 8px;
+}
+
+.imagemDoFilme {
+    border-radius: 10px;
+    width: 10rem;
+    height: 13rem;
+}
+
+.nomeDoFilme {
+    padding-top: 0.75rem;
+}
+
+.modifier {
+    padding-top: 1rem;
+}
+
+::-webkit-scrollbar {
+    width: 0.75rem;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #6D0000;
+    border-radius: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: black;
 }
