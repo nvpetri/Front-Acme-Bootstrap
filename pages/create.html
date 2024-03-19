@@ -7,33 +7,32 @@
     <link rel="preconnect " href="https://fonts.googleapis.com ">
     <link rel="preconnect " href="https://fonts.gstatic.com " crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Pattaya&display=swap " rel="stylesheet ">
-    <link rel="stylesheet " href="./style/index.css ">
+    <link rel="stylesheet " href="../style/create.css ">
     <title>Login Acme Filmes</title>
 </head>
 
 <body>
     <header>
         <div class="logo ">
-            <img src="./img/logo-acme.svg " alt="logo-acme " class="logo-img ">
+            <img src="../img/logo-acme.svg " alt="logo-acme " class="logo-img ">
         </div>
     </header>
     <main>
         <div class="login ">
-            <h2>Login</h2>
+            <h2>Criar conta</h2>
             <input type="email " id="user-mail " placeholder="Digite seu email " class="input">
+            <input type="text" id="user-name " placeholder="Digite seu nome de usuario " class="input">
             <input type="password " id="user-pass " placeholder="Sua senha aqui " class="input">
+            <input type="password " id="user-pass " placeholder="Confirme sua senha " class="input">
             <div class="buttons ">
                 <div class="caixa">
-                    <a href="#">
-                        <h2 class="redefinir">redefinir senha</h2>
-                    </a>
-                    <a href="./pages/create.html">
-                        <h2 class="redefinir ">criar conta</h2>
+                    <button class="btn-login " id="btn-login ">
+                        <h2 class="txt-login ">Cria conta</h2>
+                    </button>
+                    <a href="../index.html">
+                        <h2 class="redefinir ">Já tem conta? Clique aqui para fazer login</h2>
                     </a>
                 </div>
-                <button class="btn-login " id="btn-login ">
-                    <h2 class="txt-login ">Login</h2>
-                </button>
             </div>
         </div>
     </main>
