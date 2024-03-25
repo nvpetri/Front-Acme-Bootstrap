@@ -15,16 +15,14 @@ function fazerLogin() {
 
     obterDados().then(usuarios => {
 
-        var emailInput = document.getElementById('user-mail').value.trim()
-        var senhaInput = document.getElementById('user-pass').value
+        let emailInput = document.getElementById('user-mail').value.trim()
+        let senhaInput = document.getElementById('user-pass').value
 
-        var usuarioEncontrado = usuarios.find(function(usuario) {
+        let usuarioEncontrado = usuarios.find(function(usuario) {
             return usuario.email.trim() === emailInput && usuario.senha === senhaInput
         })
 
         if (usuarioEncontrado) {
-            sessionStorage.setItem('userId', usuarioEncontrado.id)
-            sessionStorage.setItem('isPremium', usuarioEncontrado.premium)
             window.location.href = '/html/pgHome.html'
         } else {
             alert('Usuário ou senha incorretos. Tente novamente.')

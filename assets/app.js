@@ -1,26 +1,58 @@
 'use strict'
 
-import { getFilmes } from "./filmes.js"
+import { getFilmes, getFilmeNome } from "./filmes.js"
+
+const campoPesquisa = document.getElementById('input-pesquisa')
+
+campoPesquisa.addEventListener('input', function() {
+    let nomeFilme = campoPesquisa.value
+
+    if (nomeFilme == '') {
+        nomeFilme = null
+    }
+
+    preencherCardsFilme(nomeFilme)
+})
 
 
-async function preencherCardsFilme() {
-    const filmes = await getFilmes()
-    const container = document.querySelector('.row')
+async function preencherCardsFilme(nomeFilme) {
 
-    for (const filme of filmes) {
-        const divCol = document.createElement('div')
-        divCol.classList.add('col')
+    if (nomeFilme == null) {
+        const filmes = await getFilmes()
+        const container = document.querySelector('.row')
 
-        const card = await criarCards(filme)
-        divCol.appendChild(card)
+        for (const filme of filmes) {
 
-        container.appendChild(divCol)
+            const divCol = document.createElement('div')
+            divCol.classList.add('col')
+
+            const card = await criarCards(filme)
+            divCol.appendChild(card)
+
+            container.appendChild(divCol)
+        }
+    } else {
+        const filmes = await getFilmeNome(nomeFilme)
+
+        const container = document.querySelector('.row')
+        container.innerHTML = ''
+
+        for (const filme of filmes) {
+            const divCol = document.createElement('div')
+            divCol.classList.add('col')
+
+            const card = await criarCards(filme)
+            divCol.appendChild(card)
+
+            container.appendChild(divCol)
+        }
     }
 }
 
 async function criarCards(filme) {
     const card = document.createElement('div')
-    card.classList.add('p-3')
+    card.classList.add('p-3', 'filme-card')
+    card.dataset.id = filme.id
 
     const imagemDoFilme = document.createElement('img')
     imagemDoFilme.src = filme.foto_capa
@@ -29,17 +61,16 @@ async function criarCards(filme) {
     card.appendChild(imagemDoFilme)
 
     const divName = document.createElement('div')
-    card.appendChild(divName)
     divName.classList.add('divName')
 
     const nomeDoFilme = document.createElement('p')
     nomeDoFilme.textContent = filme.nome
     nomeDoFilme.classList.add('nomeDoFilme')
     divName.appendChild(nomeDoFilme)
+    card.appendChild(divName)
 
     return card
 }
 
-(async function() {
-    await preencherCardsFilme()
-})()
+
+await preencherCardsFilme()

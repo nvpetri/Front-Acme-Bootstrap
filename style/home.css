@@ -41,6 +41,7 @@ body {
     width: 10rem;
     height: 10rem;
     object-fit: cover;
+    cursor: pointer;
 }
 
 .nomeDoFilme {
